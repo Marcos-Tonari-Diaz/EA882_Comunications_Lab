@@ -1,0 +1,9 @@
+simulation_time = 0.56+0.01*3;
+bin_mat = de2bi(double('Shannon'));
+size_bin_mat = size(bin_mat);
+zero_column = zeros(size_bin_mat(1), 1);
+bin_mat = [zero_column bin_mat];
+size_bin_mat = size(bin_mat);
+bin_vect = reshape(bin_mat', 1,[]);
+bin_vect = [bin_vect 0 0 0];
+bin_ts = timeseries(bin_vect, linspace(0, simulation_time-0.01, size_bin_mat(1)*size_bin_mat(2)+3));
